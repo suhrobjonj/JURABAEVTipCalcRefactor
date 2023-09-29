@@ -6,7 +6,7 @@ public class TipCalculator {
 
     public TipCalculator(int num, int p) {
         numPeople = num;
-        tipPercentage = p;
+        tipPercentage = p/100;
         totalBeforeTip = 0;
     }
 
@@ -15,7 +15,7 @@ public class TipCalculator {
     }
 
     public int getTipPercentage() {
-        return tipPercentage;
+        return tipPercentage * 100;
     }
 
     public void addMeal(double cost) {
