@@ -38,7 +38,7 @@ public class Main {
         double totalCostBeforeTip = calc.getTotalBillBeforeTip();
         System.out.println("---------------------------------------------------");
         System.out.println("Total price: $" + String.format("%.2f",totalCostBeforeTip));
-        System.out.println("Tip percentage: %" + calc.getTipPercentage());
+        System.out.println("Tip percentage: " + calc.getTipPercentage() + "%");
         System.out.println("Total tip amount: $" + String.format("%.2f",calc.tipAmount()));
         System.out.println("Total bill after tip: $" + String.format("%.2f",calc.totalBill()));
         System.out.println("Per person cost before tip: $" + String.format("%.2f",calc.perPersonCostBeforeTip()));
