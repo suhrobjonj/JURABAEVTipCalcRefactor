@@ -4,10 +4,13 @@ public class TipCalculator {
     private int tipPercentage;
     private double totalBeforeTip;
 
+    private double calcTip;
+
     public TipCalculator(int num, int p) {
         numPeople = num;
-        tipPercentage = p/100;
+        tipPercentage = p;
         totalBeforeTip = 0;
+        calcTip = tipPercentage / 100.0;
     }
 
     public double getTotalBillBeforeTip() {
@@ -15,7 +18,7 @@ public class TipCalculator {
     }
 
     public int getTipPercentage() {
-        return tipPercentage * 100;
+        return tipPercentage;
     }
 
     public void addMeal(double cost) {
@@ -23,21 +26,21 @@ public class TipCalculator {
     }
 
     public double tipAmount() {
-        return totalBeforeTip * tipPercentage;
+        return totalBeforeTip * calcTip;
     }
 
     public double totalBill() {
-        return totalBeforeTip + (totalBeforeTip * tipPercentage);
+        return totalBeforeTip + (totalBeforeTip * calcTip);
     }
     public double perPersonCostBeforeTip() {
         return totalBeforeTip / numPeople;
     }
 
     public double perPersonTipAmount() {
-        return (totalBeforeTip * tipPercentage) / numPeople;
+        return (totalBeforeTip * calcTip) / numPeople;
     }
 
     public double perPersonTotalCost() {
-        return (totalBeforeTip + (totalBeforeTip * tipPercentage)) / numPeople;
+        return (totalBeforeTip + (totalBeforeTip * calcTip)) / numPeople;
     }
 }

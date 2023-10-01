@@ -10,24 +10,24 @@ public class Main {
         int percentTip = scan.nextInt();
         TipCalculator calc = new TipCalculator(numPeople, percentTip);
 
-        String items = "\n";
+        String ietmList = "\n";
         String itemName;
         int itemCount;
 
         System.out.print("Enter price of item: ");
-        double price = scan.nextDouble();
+        double itemPrice = scan.nextDouble();
 
-        while (price != -1) {
+        while (itemPrice != -1) {
             scan.nextLine();
             System.out.print("Enter item name: ");
             itemName = scan.nextLine();
-            System.out.print("Total number ordered: ");
+            System.out.print("Total number of " + itemName + " ordered: ");
             itemCount = scan.nextInt();
-            items += (itemName + " x " + itemCount + "\n");
-            calc.addMeal(price * itemCount);
+            ietmList += (itemName + " x " + itemCount + "\n");
+            calc.addMeal(itemPrice * itemCount);
 
             System.out.print("Enter price of item (-1 to continue): ");
-            price = scan.nextDouble();
+            itemPrice = scan.nextDouble();
         }
 
         double totalCostBeforeTip = calc.getTotalBillBeforeTip();
@@ -40,7 +40,7 @@ public class Main {
         System.out.println("Per person tip cost: $" + String.format("%.2f",calc.perPersonTipAmount()));
         System.out.println("Total cost per person: $" + String.format("%.2f",calc.perPersonTotalCost()));
         System.out.println("---------------------------------------------------");
-        System.out.println("Items ordered: " + items);
+        System.out.println("Items ordered: " + ietmList);
 
     }
 }
