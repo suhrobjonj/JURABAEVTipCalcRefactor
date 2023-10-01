@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Welcome to Tip Calculator!!");
         System.out.print("How many people are in your group? ");
         int numPeople = scan.nextInt();
-        System.out.print("Enter tip percentage: ");
+        System.out.print("What's the tip percentage?: ");
         int percentTip = scan.nextInt();
         TipCalculator calc = new TipCalculator(numPeople, percentTip);
 
@@ -17,7 +17,7 @@ public class Main {
         String itemName;
         int itemCount;
 
-        System.out.print("Enter price of item: ");
+        System.out.print("Enter price of item in dollars and cents: ");
         double itemPrice = scan.nextDouble();
 
         // while loop, user enters item price, name, and count
@@ -30,7 +30,7 @@ public class Main {
             ietmList += (itemName + " x " + itemCount + "\n");
             calc.addMeal(itemPrice * itemCount);
 
-            System.out.print("Enter price of item (-1 to continue): ");
+            System.out.print("Enter price of item in dollars and cents (-1 to continue): ");
             itemPrice = scan.nextDouble();
         }
 
