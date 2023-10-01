@@ -6,7 +6,7 @@ public class Main {
         // getting user input
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Tip Calculator!!");
-        System.out.print("Enter amount of people: ");
+        System.out.print("How many people are in your group? ");
         int numPeople = scan.nextInt();
         System.out.print("Enter tip percentage: ");
         int percentTip = scan.nextInt();
