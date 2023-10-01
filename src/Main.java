@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        // getting user input
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Tip Calculator!!");
         System.out.print("Enter amount of people: ");
@@ -10,6 +12,7 @@ public class Main {
         int percentTip = scan.nextInt();
         TipCalculator calc = new TipCalculator(numPeople, percentTip);
 
+        // setting variables for while loop
         String ietmList = "\n";
         String itemName;
         int itemCount;
@@ -17,6 +20,7 @@ public class Main {
         System.out.print("Enter price of item: ");
         double itemPrice = scan.nextDouble();
 
+        // while loop, user enters item price, name, and count
         while (itemPrice != -1) {
             scan.nextLine();
             System.out.print("Enter item name: ");
@@ -30,6 +34,7 @@ public class Main {
             itemPrice = scan.nextDouble();
         }
 
+        // calculating values and printing receipt
         double totalCostBeforeTip = calc.getTotalBillBeforeTip();
         System.out.println("---------------------------------------------------");
         System.out.println("Total price: $" + String.format("%.2f",totalCostBeforeTip));
